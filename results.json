@@ -1,0 +1,50 @@
+{
+  "lastUpdated": "16 Apr 2026",
+  "metrics": {
+    "participants": "500 invited / 382 responses",
+    "averageScore": "14.8 / 20",
+    "highestScore": "20 / 20",
+    "completionRate": "76.4%",
+    "toughestQuestion": "Q17 - Model performance across regions",
+    "bestSection": "AI Applications"
+  },
+  "insights": [
+    "Most participants performed strongly on practical AI use cases but found deployment and model-risk questions harder.",
+    "Current affairs questions had high engagement when they were recognizable and linked to broad industry themes.",
+    "Questions with plausible distractors created better differentiation than questions with one obviously correct answer."
+  ],
+  "questionStats": [
+    {
+      "question": "Q17 - Uneven model performance across regions",
+      "correctRate": "38% correct",
+      "note": "This was the toughest question and likely reflects lower familiarity with data distribution shift."
+    },
+    {
+      "question": "Q8 - HCP segmentation inputs",
+      "correctRate": "84% correct",
+      "note": "Strong recognition of commercial AI use cases among respondents."
+    },
+    {
+      "question": "Q20 - Scaling AI across geographies",
+      "correctRate": "49% correct",
+      "note": "Architecture and governance remain areas where the audience was more divided."
+    }
+  ],
+  "topPerformers": [
+    {
+      "name": "Participant 1",
+      "team": "S&C - Life Sciences",
+      "score": "20 / 20"
+    },
+    {
+      "name": "Participant 2",
+      "team": "S&C - Applied Intelligence",
+      "score": "19 / 20"
+    },
+    {
+      "name": "Participant 3",
+      "team": "S&C - Strategy",
+      "score": "19 / 20"
+    }
+  ]
+}

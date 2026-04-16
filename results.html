@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI in Life Sciences - Results Summary</title>
+  <meta name="description" content="Post-quiz results summary page driven by a simple JSON file." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero card compact-hero">
+      <div class="hero-copy">
+        <span class="eyebrow">Post-quiz summary</span>
+        <h1>Results Overview</h1>
+        <p class="lede">A lightweight static page that reads summary stats from <code>results.json</code>.</p>
+      </div>
+      <div class="hero-actions no-wrap">
+        <a class="btn btn-secondary" href="index.html">Back to Quiz Home</a>
+      </div>
+    </header>
+
+    <main id="resultsApp">
+      <section class="grid-three" id="metricsGrid"></section>
+
+      <section class="grid-two lower-grid">
+        <article class="card section-card">
+          <div class="section-heading-row">
+            <h2>Top insights</h2>
+            <span class="pill" id="lastUpdated">Loading</span>
+          </div>
+          <div id="insightsList"></div>
+        </article>
+
+        <article class="card section-card">
+          <h2>Question performance</h2>
+          <div id="questionStats"></div>
+        </article>
+      </section>
+
+      <section class="card section-card">
+        <div class="section-heading-row">
+          <h2>Top performers</h2>
+          <span class="pill">Optional</span>
+        </div>
+        <div id="topPerformers"></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Tip: export your Microsoft Forms results to Excel, calculate summary stats, then update <code>results.json</code>.</span>
+    </footer>
+  </div>
+
+  <script>
+    async function loadResults() {
+      const res = await fetch('results.json');
+      const data = await res.json();
+
+      document.getElementById('lastUpdated').textContent = `Updated ${data.lastUpdated}`;
+
+      const metrics = [
+        { label: 'Participants', value: data.metrics.participants },
+        { label: 'Avg score', value: data.metrics.averageScore },
+        { label: 'Highest score', value: data.metrics.highestScore },
+        { label: 'Completion rate', value: data.metrics.completionRate },
+        { label: 'Toughest question', value: data.metrics.toughestQuestion },
+        { label: 'Best-performing section', value: data.metrics.bestSection }
+      ];
+
+      document.getElementById('metricsGrid').innerHTML = metrics.map(item => `
+        <article class="card metric-summary-card">
+          <span class="metric-label">${item.label}</span>
+          <strong>${item.value}</strong>
+        </article>
+      `).join('');
+
+      document.getElementById('insightsList').innerHTML = `
+        <ul class="feature-list">${data.insights.map(item => `<li>${item}</li>`).join('')}</ul>
+      `;
+
+      document.getElementById('questionStats').innerHTML = `
+        <div class="stats-list">
+          ${data.questionStats.map(q => `
+            <div class="stats-row">
+              <div>
+                <strong>${q.question}</strong>
+                <p>${q.note}</p>
+              </div>
+              <span class="stats-badge">${q.correctRate}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+
+      document.getElementById('topPerformers').innerHTML = `
+        <div class="stats-list">
+          ${data.topPerformers.map(p => `
+            <div class="stats-row">
+              <div>
+                <strong>${p.name}</strong>
+                <p>${p.team}</p>
+              </div>
+              <span class="stats-badge">${p.score}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    loadResults().catch(() => {
+      document.getElementById('resultsApp').innerHTML = `
+        <section class="card section-card">
+          <h2>Could not load results</h2>
+          <p>Make sure <code>results.json</code> is present and valid JSON.</p>
+        </section>
+      `;
+    });
+  </script>
+</body>
+</html>

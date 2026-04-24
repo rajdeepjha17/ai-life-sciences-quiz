@@ -3,138 +3,46 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI in Life Sciences - Quick Check</title>
-  <meta name="description" content="A polished landing page for an asynchronous AI in Life Sciences quiz powered by Microsoft Forms." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <title>AI in Life Sciences Quiz</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
-  <div class="page-shell">
-    <header class="hero card">
-      <div class="hero-copy">
-        <span class="eyebrow">Asynchronous Quiz Experience</span>
-        <h1>AI in Life Sciences - Quick Check</h1>
-        <p class="lede">
-          Test your understanding of real-world AI applications, decision-making scenarios,
-          and current developments in life sciences.
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" id="startQuizBtn" href="https://forms.gle/59odWmALQoECSxwL7">Start Quiz</a>
-          <a class="btn btn-secondary" href="results.html">View Results Summary</a>
+  <main class="page">
+    <section class="hero">
+      <div class="badge">3-Day Async Quiz Challenge</div>
+
+      <h1>AI in Life Sciences<br>Quick Check</h1>
+
+      <p class="subtitle">
+        Test your understanding of how AI is transforming drug discovery,
+        clinical workflows, commercial strategy, and decision-making in life sciences.
+      </p>
+
+      <div class="stats">
+        <div>
+          <strong>20</strong>
+          <span>Questions</span>
         </div>
-        <p class="tiny-note">
-          Replace the quiz link in <code>index.html</code> with your Microsoft Forms URL before publishing.
-        </p>
-      </div>
-      <div class="hero-panel">
-        <div class="metric-grid">
-          <div class="metric-card">
-            <span class="metric-label">Questions</span>
-            <strong>20</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Time</span>
-            <strong>10-12 min</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Format</span>
-            <strong>Self-paced</strong>
-          </div>
-          <div class="metric-card">
-            <span class="metric-label">Audience</span>
-            <strong>Life Sciences</strong>
-          </div>
+        <div>
+          <strong>10–12</strong>
+          <span>Minutes</span>
+        </div>
+        <div>
+          <strong>Self</strong>
+          <span>Paced</span>
         </div>
       </div>
-    </header>
 
-    <main>
-      <section class="grid-two">
-        <article class="card section-card">
-          <h2>What this covers</h2>
-          <ul class="feature-list">
-            <li>AI applications in drug discovery, clinical, medical, and commercial settings</li>
-            <li>Scenario-based questions to test applied judgment</li>
-            <li>Governance, risk, and deployment challenges</li>
-            <li>Current affairs linked to AI in healthcare and life sciences</li>
-          </ul>
-        </article>
-        <article class="card section-card">
-          <h2>Instructions</h2>
-          <ol class="feature-list ordered">
-            <li>Click <strong>Start Quiz</strong> to open the Microsoft Forms quiz.</li>
-            <li>Complete all 20 questions in one sitting if possible.</li>
-            <li>Use your Accenture email if you want results tracked by participant.</li>
-            <li>Submit before the deadline shown below.</li>
-          </ol>
-        </article>
-      </section>
-
-      <section class="card timeline-card">
-        <div class="section-heading-row">
-          <div>
-            <span class="eyebrow">Suggested structure</span>
-            <h2>Quiz flow</h2>
-          </div>
-          <span class="pill">Editable</span>
-        </div>
-        <div class="timeline">
-          <div class="timeline-item">
-            <span class="timeline-step">1</span>
-            <div>
-              <h3>AI applications</h3>
-              <p>Questions 1-5</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-step">2</span>
-            <div>
-              <h3>Real-world scenarios</h3>
-              <p>Questions 6-10</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-step">3</span>
-            <div>
-              <h3>Governance and challenges</h3>
-              <p>Questions 11-15</p>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <span class="timeline-step">4</span>
-            <div>
-              <h3>Current affairs</h3>
-              <p>Questions 16-20</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="grid-two lower-grid">
-        <article class="card section-card">
-          <h2>Submission deadline</h2>
-          <p class="big-text">Add your deadline here</p>
-          <p class="muted">Example: Open for 3 days, closes at 6:00 PM IST on 22 April 2026.</p>
-        </article>
-        <article class="card section-card">
-          <h2>After the quiz closes</h2>
-          <p>
-            Update <code>results.json</code> with the final participation and score highlights.
-            The <a href="results.html">Results Summary</a> page will update automatically.
-          </p>
-        </article>
-      </section>
-    </main>
-
-    <footer class="site-footer">
-      <span>Built for a 3-day async quiz experience</span>
-      <span class="separator">•</span>
-      <span>Hosted on GitHub Pages or Vercel</span>
-      <span class="separator">•</span>
-      <span>Scored via Microsoft Forms</span>
-    </footer>
-  </div>
+      <div class="actions">
+        <a class="btn primary" href="https://forms.gle/59odWmALQoECSxwL7" target="_blank">
+          Start Quiz
+        </a>
+        <a class="btn secondary" href="results.html">
+          View Leaderboard
+        </a>
+      </div>
+    </section>
+  </main>
 </body>
 </html>
